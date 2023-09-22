@@ -1,0 +1,33 @@
+- Core Library :
+- react.
+
+Attachment with Core library :
+
+- react-dom.
+- react-native.
+
+- Node Package Manager :
+- Node Package Executer :
+
+# 1. How to create react app:
+
+[1].
+
+- Creating React app with help of Create-react-app :
+- npx create-react-app app_name---> utility --> software.
+- cd app_name
+- npm run Start --> start project app
+
+- npm run build
+
+[2].
+
+- Vite --> Bundler
+- Creating React app with help of Vite :
+- npm create vite@latest
+- cd 02_basic_vitereact
+- npm install
+- npm run dev --> start project app
+
+- Clean React Apps and Post Heading :
+- Only Keep Necessary files in both Vite and Create-react-app.
