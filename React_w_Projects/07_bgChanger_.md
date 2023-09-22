@@ -1,10 +1,15 @@
-# Vite :
+# [1] Create App with Vite:
 
-https://vitejs.dev/guide/
+- Creating React app with help of Vite :
+- npm create vite@latest
+- cd 07_bgChanger
+- npm install
+- npm run dev --> start project app
 
-# CSS tailWind :
+- Clean React Apps and Post Heading :
+- Only Keep Necessary files in both Vite and Create-react-app.
 
-https://tailwindcss.com/
+# [2] CSS tailwind Config :
 
 - [1] install tailwind css with vite
   https://tailwindcss.com/docs/guides/vite
@@ -32,21 +37,3 @@ plugins: [],
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
-
-- [5] Start your build process
-
-  - npm run dev
-
----
-
-- Pexels for Images:
-- https://www.pexels.com/photo/holding
-
-- DevUI.io
-- We can get components readymade.
-
-# Summary :
-
-- Configured Tailwind.
-- Used Tailwind Components.
-- Handled Props.
