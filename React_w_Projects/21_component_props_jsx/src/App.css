@@ -91,3 +91,10 @@ a {
     margin-left: 10px;
   }
 }
+
+.card {
+  border: 2px solid salmon;
+}
+.card-content {
+  border: 2px solid salmon;
+}

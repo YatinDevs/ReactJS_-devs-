@@ -6,13 +6,19 @@ import Skills from "./resumecomponents/Skills";
 import Experience from "./resumecomponents/Experience";
 import Extracurriculars from "./resumecomponents/Extracurriculars";
 
-function Border({ childern }) {
+function Card({ children }) {
   return (
-    <div>
-      <div id="header"></div>
+    <div className="card">
+      <div id="header">
+        <h1>Resume Emily</h1>
+      </div>
+      <br></br>
+      <br></br>
       <div className="left"></div>
-      <div className="stuff">{childern}</div>
       <div className="right"></div>
+      <hr></hr>
+      {children}
+
       <div id="footer">
         <h2 id="name">Emily</h2>
       </div>
@@ -33,24 +39,21 @@ export default function Resume() {
   };
   return (
     <div>
-      <div id="header"></div>
-      <div className="left"></div>
-      <div className="stuff">
-        <br />
-        <br />
-        <h1>Resume</h1>
-        <h2>Emily</h2>
-        <hr></hr>
-        <Interests {...resume} />
-        <Skills {...resume}></Skills>
-        <Education {...resume}></Education>
-        <Experience {...resume}></Experience>
-        <Extracurriculars {...resume}></Extracurriculars>
-      </div>
-      <div className="right"></div>
-      <div id="footer">
-        <h2 id="name">Emily</h2>
-      </div>
+      {/* <div id="header"></div>
+      
+     
+        */}
+      <Card>
+        <div className="stuff">
+          <Interests {...resume} />
+          <Skills {...resume}></Skills>
+          <Education {...resume}></Education>
+          <Experience {...resume}></Experience>
+          <Extracurriculars {...resume}></Extracurriculars>
+          {/* </div>
+           */}
+        </div>
+      </Card>
     </div>
   );
 }

@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App";
 import Resume from "./Resume";
 import "./App.css";
-import Border from "./Border";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
