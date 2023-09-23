@@ -1,8 +1,18 @@
+import "../App.css";
+
 function Video() {
+  let topic = "JS in JSX with Curly Braces.";
+  let bg = "dark";
   return (
     <div>
       <h1>Video Component</h1>
-      <img src="https://picsum.photos/640/360" alt="Katherine Johnson" />
+      <img
+        style={{ border: "2px solid lightsalmon" }}
+        className={bg}
+        src="https://picsum.photos/640/360"
+        alt="Katherine Johnson"
+      />
+      <h3 className={bg}>{topic}</h3>
     </div>
   );
 }

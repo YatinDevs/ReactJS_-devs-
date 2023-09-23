@@ -62,3 +62,18 @@ You’ve just gotten your first taste of React! Let’s recap some key points.
 2. Fix the return statement
 3. Spot the mistake
 4. Your own component
+
+=======================================================================
+
+# Writing Markup With JSX :
+
+- JSX is a syntax extension for JavaScript that lets you write HTML-like markup inside a JavaScript file. Although there are other ways to write components, most React developers prefer the conciseness of JSX, and most codebases use it.
+
+# JSX: Putting markup into JavaScript
+
+- The Web has been built on HTML, CSS, and JavaScript. For many years, web developers kept content in HTML, design in CSS, and logic in JavaScript. — often in separate files!
+
+- Content was marked up inside HTML while the page’s logic lived separately in JavaScript:
+
+- But as the Web became more interactive, logic increasingly determined content. JavaScript was in charge of the HTML!
+- This is why in React, rendering logic and markup live together in the same place—components.
