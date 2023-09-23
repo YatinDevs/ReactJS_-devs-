@@ -18,7 +18,7 @@ function Video({ title, id, channel = "Coder Dost", views, time, verified }) {
       <div className="container">
         <div className="pic">
           <img
-            src={`https://picsum.photos/id/1/160/90`}
+            src={`https://picsum.photos/id/${id}/160/90`}
             alt="Katherine Johnson"
           />
         </div>
