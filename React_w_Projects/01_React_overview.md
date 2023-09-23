@@ -31,3 +31,18 @@ Attachment with Core library :
 
 - Clean React Apps and Post Heading :
 - Only Keep Necessary files in both Vite and Create-react-app.
+
+=======================================================================
+Assignment 1 : If we delete node_modules. How to run our app again successfully ?
+
+-> Reinstall Dependencies:
+
+- Using npm:
+  Run the following command to reinstall the dependencies specified in your package.json file:
+
+- npm install
+
+- Using Yarn:
+  If you are using Yarn, run the following command to reinstall the dependencies based on your yarn.lock file:
+
+- yarn install
