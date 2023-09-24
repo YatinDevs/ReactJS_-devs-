@@ -1,0 +1,31 @@
+body {
+  background-color: #f9f9f9;
+}
+
+.event-container {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.image-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  height: 350px;
+  padding: 1rem;
+}
+.image-cont img {
+  width: 600px;
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.event-container button {
+  margin: 1rem;
+}
+.event-container form {
+  padding: 1rem;
+}
