@@ -94,3 +94,97 @@ alert("Submit Form?");
 }
 };
 ======================================================================
+
+- Assignment 5 : Can you try the challenge of passing the function in one Prop like onPlay and the message inside that function to be accessed from other prop message [ As shown in Chapter Video ]
+
+<!-- App Component -->
+
+<!-- Passing Function as Props On Click which send message as props
+  Accessed in PlayButton Printed in Console -->
+
+- function App() {
+  let message = "";
+  return (
+  <div className="App" onClick={() => console.log("App")}>
+  <div>Videos</div>
+  {videos.map((video) => (
+  <Video
+            key={video.id}
+            id={video.id}
+            verified={video.verified}
+            title={video.title}
+            views={video.views}
+            time={video.time}
+          >
+  <PlayButton
+  // message="abc"
+  onPlay={() =>
+  console.log((message = "Playing.. : title ->"), video.title)
+  }
+  onPause={() =>
+  console.log((message = "Paused.. : title ->"), video.title)
+  } >
+  {video.title}
+  </PlayButton>
+  </Video>
+  ))}
+
+<!-- PlayButton Component -->
+
+function PlayButton({ message, children, onPlay, onPause }) {
+let playing = false; // don't use this approach;
+function handleClick(e) {
+// console.log(e);
+e.stopPropagation();
+window.close();
+
+    if (playing) onPause(console.log(message));
+    else onPlay(console.log(message));
+
+    playing = !playing;
+
+}
+
+return (
+<button onClick={handleClick}>
+{children} : {playing ? ">" : "||"}
+</button>
+);
+}
+
+export default PlayButton;
+
+======================================================================
+
+- Assignment 6 : Using event bubbling concept print the name of Parents to Child of any clicked element. It should be order in "GrandParent >Parent > Child" this kind of order. Where "Child" represents the current clicked element.
+
+======================================================================
+
+- Assignment 7 : Make a custom event called onClose. this event should close the current browser tab. you can apply it to a button on click or anywhere.
+
+<!-- PlayButton Component -->
+
+function PlayButton({ message, children, onPlay, onPause }) {
+let playing = false; // don't use this approach;
+function handleClick(e) {
+// console.log(e);
+e.stopPropagation();
+window.close();
+
+    if (playing) onPause(console.log(message));
+    else onPlay(console.log(message));
+
+    playing = !playing;
+
+}
+
+return (
+<button onClick={handleClick}>
+{children} : {playing ? ">" : "||"}
+</button>
+);
+}
+
+export default PlayButton;
+
+======================================================================

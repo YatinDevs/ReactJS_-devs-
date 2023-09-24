@@ -1,5 +1,6 @@
 import Event from "./components/Event";
 import EventAssign from "./components/EventAssign";
+import EventBubbling from "./components/Event_Bubbling/EventBubbling";
 
 export default function MyApp() {
   return (
@@ -10,6 +11,8 @@ export default function MyApp() {
       <hr></hr>
 
       <Event></Event>
+      <hr></hr>
+      <EventBubbling />
     </div>
   );
 }

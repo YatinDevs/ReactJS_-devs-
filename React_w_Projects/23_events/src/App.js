@@ -4,6 +4,7 @@ import Video from "./components/Video";
 import videos from "./data/data";
 
 function App() {
+  let message = "";
   return (
     <div className="App" onClick={() => console.log("App")}>
       <div>Videos</div>
@@ -17,9 +18,13 @@ function App() {
           time={video.time}
         >
           <PlayButton
-            message="play-video"
-            onPlay={() => console.log("Play", video.title)}
-            onPause={() => console.log("Pause", video.title)}
+            // message="abc"
+            onPlay={() =>
+              console.log((message = "Playing.. : title ->"), video.title)
+            }
+            onPause={() =>
+              console.log((message = "Paused.. : title ->"), video.title)
+            }
           >
             {video.title}
           </PlayButton>
@@ -32,6 +37,9 @@ function App() {
         >
           Pause
         </PlayButton> */}
+        {/* <PlayButton message="play-msg" onPlay={()=>console.log('Play')} onPause={()=>console.log('Pause')}>Play</PlayButton> */}
+
+        {/* <PlayButton message="pause-msg" onSmash={()=>alert('Playyy')}>Pause</PlayButton> */}
       </div>
     </div>
   );

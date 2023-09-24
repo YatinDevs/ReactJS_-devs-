@@ -1,21 +1,23 @@
 import "./PlayButton.css";
 
-export default function PlayButton({ message, children, onPause, onPlay }) {
-  let status = false; // Dont Use This Approach .
+function PlayButton({ message, children, onPlay, onPause }) {
+  let playing = false; // don't use this approach;
   function handleClick(e) {
-    // console.log(message);
     // console.log(e);
     e.stopPropagation();
-    e.preventDefault();
+    window.close();
 
-    if (status) onPause();
-    else onPlay();
+    if (playing) onPause(console.log(message));
+    else onPlay(console.log(message));
 
-    status = !status;
+    playing = !playing;
   }
+
   return (
     <button onClick={handleClick}>
-      {children} {status ? ">" : "||"}
+      {children} : {playing ? ">" : "||"}
     </button>
   );
 }
+
+export default PlayButton;
