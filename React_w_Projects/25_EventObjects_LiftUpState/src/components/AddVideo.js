@@ -1,17 +1,21 @@
 import { useState } from "react";
 import "../css/AddVideo.css";
+const initialState = {
+  time: "1 month ago",
+  channel: "Coder Dost",
+  verified: true,
+  title: "",
+  views: "",
+};
 
 function AddVideo({ addNew }) {
-  const [video, setVideo] = useState({
-    time: "1 month ago",
-    channel: "Coder Dost",
-    verified: true,
-  });
+  const [video, setVideo] = useState({ initialState });
 
   function handleSubmit(e) {
     e.preventDefault();
     console.log(video);
     addNew(video);
+    setVideo(initialState);
   }
   const handleChange = (e) => {
     e.stopPropagation();
@@ -27,12 +31,14 @@ function AddVideo({ addNew }) {
           name="title"
           placeholder="title "
           type="text"
+          value={video.title}
         ></input>
         <input
           onChange={handleChange}
           name="views"
           placeholder="views"
           type="text"
+          value={video.views}
         ></input>
         <button onClick={handleSubmit}>Add Video</button>
 
