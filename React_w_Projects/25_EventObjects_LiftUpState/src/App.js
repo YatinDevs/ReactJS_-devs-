@@ -5,6 +5,8 @@ import Video from "./components/Video";
 import videoDB from "./data/data";
 import Counter from "./components/Counter";
 import AddVideo from "./components/AddVideo";
+import VideoList from "./components/VideoList";
+
 function App() {
   const [videos, setVideos] = useState(videoDB);
 
@@ -14,32 +16,8 @@ function App() {
   return (
     <div className="App" onClick={() => console.log("App")}>
       <AddVideo addNew={AddVideos}></AddVideo>
-      {videos.map((video) => (
-        <Video
-          key={video.id}
-          id={video.id}
-          verified={video.verified}
-          title={video.title}
-          views={video.views}
-          time={video.time}
-        >
-          <PlayButton
-            message="play-video"
-            onPlay={() => console.log("Play", video.title)}
-            onPause={() => console.log("Pause", video.title)}
-          >
-            {video.title}
-          </PlayButton>
-        </Video>
-      ))}
-      <div className="btn-div">
-        {/* <PlayButton
-          message="pause-video"
-          onSmash={() => alert("Video Paused!")}
-        >
-          Pause
-        </PlayButton> */}
-      </div>
+
+      <VideoList passVideo={videos} />
     </div>
   );
 }
