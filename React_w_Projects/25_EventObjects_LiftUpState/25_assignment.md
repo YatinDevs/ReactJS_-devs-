@@ -68,6 +68,8 @@ let hasNext = index < sculptureList.length - 1;
 
 - Try moving the second useState call after the if condition and notice how this breaks it again.
 
+- 4 . Remove unnecessary State :
+
 ======================================================================
 
 # Recap
