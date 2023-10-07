@@ -9,13 +9,17 @@ const initialState = {
   views: "",
 };
 
-function AddVideo({ addNew, editableVideo }) {
+function AddVideo({ addNew, updateVideo, editableVideo }) {
   const [video, setVideo] = useState({ initialState });
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(video);
-    addNew(video);
+    // console.log(video);
+    if (editableVideo) {
+      updateVideo(video);
+    } else {
+      addNew(video);
+    }
     setVideo(initialState);
   }
   const handleChange = (e) => {
@@ -24,7 +28,13 @@ function AddVideo({ addNew, editableVideo }) {
     setVideo({ ...video, [e.target.name]: e.target.value });
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (editableVideo) {
+      setVideo(editableVideo);
+    }
+  }, [editableVideo]);
+  // 1.use Effect hook runs first time when component is mount/ render
+  // 2.and as many times if any changes in dependencies added to its array.
   return (
     <>
       <form>
@@ -42,7 +52,10 @@ function AddVideo({ addNew, editableVideo }) {
           type="text"
           value={video.views}
         ></input>
-        <button onClick={handleSubmit}>Add Video</button>
+        <button onClick={handleSubmit}>
+          {" "}
+          {editableVideo ? "Edit " : "Add Video"}
+        </button>
 
         {/* <button
         //   onClick={(e) => {

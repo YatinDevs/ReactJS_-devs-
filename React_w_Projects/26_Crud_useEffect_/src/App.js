@@ -24,10 +24,22 @@ function App() {
     seteditableVideo(videos.find((video) => video.id === id));
     // console.log(res);
   }
+  function updateVideo(video) {
+    const index = videos.findIndex((v) => v.id === video.id);
+    const newVideos = [...videos];
+    newVideos.splice(index, 1, video);
+    setVideos(newVideos);
+    // console.log(newVideos);
+    // console.log(video);
+  }
 
   return (
     <div className="App" onClick={() => console.log("App")}>
-      <AddVideo addNew={AddVideos} editableVideo={editableVideo}></AddVideo>
+      <AddVideo
+        updateVideo={updateVideo}
+        addNew={AddVideos}
+        editableVideo={editableVideo}
+      ></AddVideo>
       <VideoList
         passVideo={videos}
         deleteVideo={deleteVideo}
