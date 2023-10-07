@@ -5,7 +5,7 @@
 
 # React Repository :
 
-- React
+- ReactJs
 - Redux
 - Redux-Toolkit
 
