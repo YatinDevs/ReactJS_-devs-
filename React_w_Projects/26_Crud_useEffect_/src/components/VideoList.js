@@ -1,7 +1,7 @@
 import Video from "./Video";
 import PlayButton from "./PlayButton";
 
-export default function VideoList({ passVideo }) {
+export default function VideoList({ passVideo, deleteVideo, editVideo }) {
   return (
     <>
       {passVideo.map((video) => (
@@ -12,6 +12,8 @@ export default function VideoList({ passVideo }) {
           title={video.title}
           views={video.views}
           time={video.time}
+          deleteVideo={deleteVideo}
+          editVideo={editVideo}
         >
           <PlayButton
             message="play-video"

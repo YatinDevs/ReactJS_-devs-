@@ -9,6 +9,8 @@ function Video({
   time,
   verified,
   children,
+  deleteVideo,
+  editVideo,
 }) {
   //   let channelJSX;
 
@@ -25,6 +27,23 @@ function Video({
   return (
     <>
       <div className="container">
+        <button
+          className="close"
+          onClick={() => {
+            deleteVideo(id);
+          }}
+        >
+          X
+        </button>
+        <button
+          className="edit"
+          onClick={() => {
+            editVideo(id);
+          }}
+        >
+          Edit
+        </button>
+
         <div className="pic">
           <img
             src={`https://picsum.photos/id/${id}/160/90`}
