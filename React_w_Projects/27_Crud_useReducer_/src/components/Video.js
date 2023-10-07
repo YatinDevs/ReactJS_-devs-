@@ -9,7 +9,7 @@ function Video({
   time,
   verified,
   children,
-  deleteVideo,
+  dispatch,
   editVideo,
 }) {
   //   let channelJSX;
@@ -30,7 +30,7 @@ function Video({
         <button
           className="close"
           onClick={() => {
-            deleteVideo(id);
+            dispatch({ type: "DELETE", payload: id });
           }}
         >
           X
