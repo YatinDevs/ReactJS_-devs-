@@ -7,23 +7,22 @@ body {
   color: white;
 }
 .container {
-  width: 15em;
+  width: 20em;
   margin: 0 0.2em;
   float: left;
   position: relative;
 }
+
 .pic img {
   width: 100%;
 }
 .title {
   font-weight: bold;
   margin-bottom: 1em;
-  color: white;
 }
 .channel,
 .views {
   font-size: small;
-  color: #ccc;
   margin-bottom: 0.2em;
 }
 
@@ -40,4 +39,11 @@ body {
 .edit {
   position: absolute;
   right: 5em;
+}
+
+.container.lightMode {
+  color: black;
+}
+.container.darkMode {
+  color: white;
 }

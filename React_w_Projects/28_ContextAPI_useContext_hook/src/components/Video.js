@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "../css/Video.css";
+import ThemeContext from "../context/ThemeContext";
 
 function Video({
   title,
@@ -24,10 +25,14 @@ function Video({
     channelJSX = <div className="channel">{channel}</div>;
   }
  */
+
+  const theme = useContext(ThemeContext);
+
   return (
     <>
-      <div className="container">
+      <div className={`container ${theme}`}>
         <button
+          // className={theme}
           className="close"
           onClick={() => {
             dispatch({ type: "DELETE", payload: id });
@@ -36,6 +41,7 @@ function Video({
           X
         </button>
         <button
+          // className={theme}
           className="edit"
           onClick={() => {
             editVideo(id);

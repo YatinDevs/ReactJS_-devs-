@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "../css/AddVideo.css";
+import ThemeContext from "../context/ThemeContext";
 
 const initialState = {
   time: "1 month ago",
@@ -28,6 +29,8 @@ function AddVideo({ dispatch, editableVideo }) {
     setVideo({ ...video, [e.target.name]: e.target.value });
   };
 
+  const theme = useContext(ThemeContext);
+
   useEffect(() => {
     if (editableVideo) {
       setVideo(editableVideo);
@@ -52,7 +55,7 @@ function AddVideo({ dispatch, editableVideo }) {
           type="text"
           value={video.views}
         ></input>
-        <button onClick={handleSubmit}>
+        <button className={theme} onClick={handleSubmit}>
           {editableVideo ? "Edit " : "Add "}
         </button>
 
