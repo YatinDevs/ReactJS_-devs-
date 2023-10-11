@@ -9,8 +9,9 @@ https://tailwindcss.com/
 - [1] install tailwind css with vite
   https://tailwindcss.com/docs/guides/vite
 
-- [2]npm install -D tailwindcss postcss autoprefixer
-  npx tailwindcss init -p
+- [2]
+- npm install -D tailwindcss postcss autoprefixer
+- npx tailwindcss init -p
 
 - [3]Configure your template paths
 
