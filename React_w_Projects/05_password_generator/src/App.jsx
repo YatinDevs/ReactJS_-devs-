@@ -1,10 +1,19 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 
 function App() {
   const [length, setLength] = useState(8);
   const [numAllow, setNumAllow] = useState(false);
   const [charAllow, setCharAllow] = useState(false);
   const [password, setPassword] = useState("");
+
+  // useRef hook
+  const passwordRef = useRef(null);
+
+  const copyPasstoClipboard = useCallback(() => {
+    passwordRef.current?.select();
+    passwordRef.current?.setSelectionRange(0, 101);
+    window.navigator.clipboard.writeText(password);
+  }, [password]);
 
   // useCallback is React Hook that lets you cache a function
   // defination between re-renders.
@@ -29,6 +38,7 @@ function App() {
   useEffect(() => {
     passwordGenerator();
   }, [length, numAllow, charAllow, setPassword]);
+
   return (
     <>
       <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-4 my-8 text-orange-500 bg-gray-500">
@@ -40,8 +50,12 @@ function App() {
             className="outline-none w-full py-1 px-3"
             placeholder="Password"
             readOnly
+            ref={passwordRef}
           ></input>
-          <button className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0">
+          <button
+            onClick={copyPasstoClipboard}
+            className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0"
+          >
             copy
           </button>
         </div>
