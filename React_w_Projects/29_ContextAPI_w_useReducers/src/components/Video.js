@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import "../css/Video.css";
 import ThemeContext from "../context/ThemeContext";
 import useVideoDispatch from "../hooks/VideoDispatch";
+import useCounter from "../hooks/Counters";
 function Video({
   title,
   id,
@@ -27,7 +28,7 @@ function Video({
 
   const theme = useContext(ThemeContext);
   const dispatch = useVideoDispatch();
-
+  const [count, increment, decrement] = useCounter(0);
   return (
     <>
       <div className={`container ${theme}`}>
@@ -68,6 +69,10 @@ function Video({
           {views} views <span>.</span> {time}
         </div>
         <div>{children}</div>
+
+        <button onClick={increment}>UpVote</button>
+        <p>Vote : {count}</p>
+        <button onClick={decrement}>DownVote</button>
       </div>
     </>
   );
