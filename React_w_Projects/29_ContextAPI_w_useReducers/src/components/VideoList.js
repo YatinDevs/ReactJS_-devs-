@@ -1,10 +1,13 @@
 import Video from "./Video";
 import PlayButton from "./PlayButton";
+import { useContext } from "react";
+import VideosContext from "../context/VideosContext";
 
-export default function VideoList({ passVideo, dispatch, editVideo }) {
+export default function VideoList({ editVideo }) {
+  const videos = useContext(VideosContext);
   return (
     <>
-      {passVideo.map((video) => (
+      {videos.map((video) => (
         <Video
           key={video.id}
           id={video.id}
@@ -13,7 +16,6 @@ export default function VideoList({ passVideo, dispatch, editVideo }) {
           views={video.views}
           time={video.time}
           editVideo={editVideo}
-          dispatch={dispatch}
         >
           <PlayButton
             message="play-video"

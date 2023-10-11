@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import "../css/Video.css";
 import ThemeContext from "../context/ThemeContext";
+import VideoDispatchContext from "../context/VideoDispatchContext";
 
 function Video({
   title,
@@ -10,7 +11,6 @@ function Video({
   time,
   verified,
   children,
-  dispatch,
   editVideo,
 }) {
   //   let channelJSX;
@@ -27,6 +27,7 @@ function Video({
  */
 
   const theme = useContext(ThemeContext);
+  const dispatch = useContext(VideoDispatchContext);
 
   return (
     <>

@@ -1,1 +1,2 @@
-# CRUD Operations - useEffect
+- ContextAPI with useReducer
+- and Custom hook covered here.

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import "../css/AddVideo.css";
 import ThemeContext from "../context/ThemeContext";
+import VideoDispatchContext from "../context/VideoDispatchContext";
 
 const initialState = {
   time: "1 month ago",
@@ -10,8 +11,11 @@ const initialState = {
   views: "",
 };
 
-function AddVideo({ dispatch, editableVideo }) {
+function AddVideo({ editableVideo }) {
   const [video, setVideo] = useState({ initialState });
+
+  const theme = useContext(ThemeContext);
+  const dispatch = useContext(VideoDispatchContext);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -28,8 +32,6 @@ function AddVideo({ dispatch, editableVideo }) {
     console.log(e.target.value, e.target.name);
     setVideo({ ...video, [e.target.name]: e.target.value });
   };
-
-  const theme = useContext(ThemeContext);
 
   useEffect(() => {
     if (editableVideo) {

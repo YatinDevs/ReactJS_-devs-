@@ -8,6 +8,8 @@ import Counter from "./components/Counter";
 import AddVideo from "./components/AddVideo";
 import VideoList from "./components/VideoList";
 import ThemeContext from "./context/ThemeContext";
+import VideosContext from "./context/VideosContext";
+import VideoDispatchContext from "./context/VideoDispatchContext";
 
 function App() {
   console.log("render App");
@@ -40,21 +42,21 @@ function App() {
 
   return (
     <ThemeContext.Provider value={mode}>
-      <div className={`App ${mode}`} onClick={() => console.log("App")}>
-        <button
-          onClick={() =>
-            setMode(mode === "darkMode" ? "lightMode" : "darkMode")
-          }
-        >
-          Change Theme
-        </button>
-        <AddVideo dispatch={dispatch} editableVideo={editableVideo}></AddVideo>
-        <VideoList
-          passVideo={videos}
-          dispatch={dispatch}
-          editVideo={editVideo}
-        />
-      </div>
+      <VideosContext.Provider value={videos}>
+        <VideoDispatchContext.Provider value={dispatch}>
+          <div className={`App ${mode}`} onClick={() => console.log("App")}>
+            <button
+              onClick={() =>
+                setMode(mode === "darkMode" ? "lightMode" : "darkMode")
+              }
+            >
+              Change Theme
+            </button>
+            <AddVideo editableVideo={editableVideo}></AddVideo>
+            <VideoList editVideo={editVideo} />
+          </div>
+        </VideoDispatchContext.Provider>
+      </VideosContext.Provider>
     </ThemeContext.Provider>
   );
 }
