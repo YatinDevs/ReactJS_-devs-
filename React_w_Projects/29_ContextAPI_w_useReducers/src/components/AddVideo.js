@@ -1,4 +1,4 @@
-import { Context, useContext, useEffect, useState } from "react";
+import { Context, useContext, useEffect, useRef, useState } from "react";
 import "../css/AddVideo.css";
 import ThemeContext from "../context/ThemeContext";
 import useVideoDispatch from "../hooks/VideoDispatch";
@@ -15,6 +15,8 @@ function AddVideo({ editableVideo }) {
   const [video, setVideo] = useState({ initialState });
   const dispatch = useVideoDispatch();
   const theme = useContext(ThemeContext);
+  const inputRef = useRef(null);
+
   function handleSubmit(e) {
     e.preventDefault();
     // console.log(video);
@@ -35,6 +37,15 @@ function AddVideo({ editableVideo }) {
     if (editableVideo) {
       setVideo(editableVideo);
     }
+    // inputRef.current.value = "DemoRef";
+    // inputRef.current.focus();
+    inputRef.current.placeholder = "";
+    "type title here".split("").forEach((char, i) => {
+      setTimeout(() => {
+        console.log(char);
+        inputRef.current.placeholder = inputRef.current.placeholder + char;
+      }, 200 * i);
+    });
   }, [editableVideo]);
   // 1.use Effect hook runs first time when component is mount/ render
   // 2.and as many times if any changes in dependencies added to its array.
@@ -42,6 +53,7 @@ function AddVideo({ editableVideo }) {
     <>
       <form>
         <input
+          ref={inputRef}
           onChange={handleChange}
           name="title"
           placeholder="title "

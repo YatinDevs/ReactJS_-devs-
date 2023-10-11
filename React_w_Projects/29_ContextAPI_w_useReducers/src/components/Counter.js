@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function Counter() {
   console.log("render Counter");
@@ -10,6 +10,7 @@ function Counter() {
   //   console.log(useState);
   //   console.log(setNumber);
 
+  let num = useRef(0);
   const handleClick = (e) => {
     e.stopPropagation();
     // number++;
@@ -17,8 +18,11 @@ function Counter() {
     //   setNumber((number) => number + 1);
     // }, 2000);
     setNumber((number) => number + 1);
-
+    setNumber((number) => number + 1);
+    setNumber((number) => number + 1);
+    num.current++;
     console.log("clicked", number);
+    console.log("clicked", num.current);
   };
 
   return (
