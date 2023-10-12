@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-// Custom Hook :
+
+//  Creation of Custom Hook :
 
 function useCurrencyInfo(currency) {
   const [data, setData] = useState({});
@@ -11,6 +12,8 @@ function useCurrencyInfo(currency) {
       .then((res) => setData(res[currency]));
     console.log(data);
   }, [currency]);
+  console.log(data);
+  return data;
 }
 
 export default useCurrencyInfo;
