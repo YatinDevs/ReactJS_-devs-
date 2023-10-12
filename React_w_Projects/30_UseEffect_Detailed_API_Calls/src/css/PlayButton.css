@@ -1,0 +1,23 @@
+button.darkMode,
+.darkMode button {
+  background-color: rgb(4, 50, 77);
+  border: 1px solid whitesmoke;
+  padding: 0.5em 2em;
+  border-radius: 0.8em;
+  cursor: pointer;
+  color: white;
+}
+button.lightMode,
+.lightMode button {
+  background-color: rgb(17, 159, 241);
+  border: 1px solid black;
+  padding: 0.5em 2em;
+  border-radius: 0.8em;
+  cursor: pointer;
+  color: black;
+}
+
+button:hover {
+  background-color: gray;
+  color: white;
+}
