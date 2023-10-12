@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
-
+import GitCss from "./GitCss.css";
 function Github() {
   const data = useLoaderData();
   //   const [data, setData] = useState([]);
@@ -14,18 +14,19 @@ function Github() {
   //   }, []);
 
   return (
-    <>
-      <div className="mx-auto w-full max-w-7xl">
-        <p className=" text-right">Name : {data.name}</p>
-        <p className="text-right">Github Followers: {data.followers}</p>
-        <img
-          className="rounded-xl m-4"
-          src={data.avatar_url}
-          alt="Git picture"
-          width={300}
-        />
+    <div className="container  mx-auto w-full max-w-4xl">
+      <div className="image">
+        <img src={data.avatar_url} alt="Git picture" width={300} />
       </div>
-    </>
+      <h1 id="fullname">Name : {data.name}</h1>
+      <h4 id="bio">{data.bio}</h4>
+      <p className="">Github Followers: {data.followers}</p>
+      <div id="loc">
+        {" "}
+        <span className="material-icons">location_on</span>
+        <span id="location"> {data.location} </span>
+      </div>
+    </div>
   );
 }
 
