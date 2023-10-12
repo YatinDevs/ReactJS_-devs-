@@ -1,11 +1,9 @@
 import { useState } from "react";
 
-import "./App.css";
-
 function App() {
   return (
     <>
-      <h1 className="bg-green-600 p-5">React Router</h1>
+      <h1 className="bg-green-600 p-4 text-center mx-auto">React Router</h1>
     </>
   );
 }
