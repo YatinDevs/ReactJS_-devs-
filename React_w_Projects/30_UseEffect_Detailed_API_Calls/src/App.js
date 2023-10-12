@@ -1,5 +1,5 @@
 import "./css/App.css";
-import React, { useContext, useReducer } from "react";
+import React, { useCallback, useContext, useReducer } from "react";
 import { useState } from "react";
 import PlayButton from "./components/PlayButton";
 import Video from "./components/Video";
@@ -39,9 +39,9 @@ function App() {
   }
   const [videos, dispatch] = useReducer(videoReducer, []);
 
-  function editVideo(id) {
+  const editVideo = useCallback(function editVideo(id) {
     setEditableVideo(videos.find((video) => video.id === id));
-  }
+  }, []);
 
   return (
     <ThemeContext.Provider value={mode}>
@@ -57,7 +57,7 @@ function App() {
             </button>
             <AddVideo editableVideo={editableVideo}></AddVideo>
             <VideoList editVideo={editVideo} />
-            {/* <Counter /> */}
+            <Counter />
           </div>
         </VideoDispatchContext.Provider>
       </VideosContext.Provider>

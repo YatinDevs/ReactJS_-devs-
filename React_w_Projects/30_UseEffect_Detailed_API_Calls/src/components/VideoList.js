@@ -1,6 +1,6 @@
 import Video from "./Video";
 import PlayButton from "./PlayButton";
-import { useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import useVideos from "../hooks/Videos";
 import axios from "axios";
 import useVideoDispatch from "../hooks/VideoDispatch";
@@ -21,6 +21,8 @@ export default function VideoList({ editVideo }) {
     handleVideos();
   }, [dispatch]);
 
+  const play = useCallback(() => console.log("Play"), []);
+  const pause = useCallback(() => console.log("Pause"), []);
   return (
     <>
       {videos.map((video) => (
@@ -33,11 +35,7 @@ export default function VideoList({ editVideo }) {
           time={video.time}
           editVideo={editVideo}
         >
-          <PlayButton
-            message="play-video"
-            onPlay={() => console.log("Play", video.title)}
-            onPause={() => console.log("Pause", video.title)}
-          >
+          <PlayButton message="play-video" onPlay={play} onPause={pause}>
             {video.title}
           </PlayButton>
         </Video>

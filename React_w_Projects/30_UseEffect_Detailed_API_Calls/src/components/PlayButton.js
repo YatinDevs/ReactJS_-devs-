@@ -1,8 +1,14 @@
-import { useContext, useState } from "react";
+import { useContext, useState, memo } from "react";
 import "../css/PlayButton.css";
 import ThemeContext from "../context/ThemeContext";
 
-export default function PlayButton({ message, children, onPause, onPlay }) {
+const PlayButton = memo(function PlayButton({
+  message,
+  children,
+  onPause,
+  onPlay,
+}) {
+  console.log("render PlayButton..");
   // let status = false; // Dont Use This Approach .
   const [status, setStatus] = useState(false);
 
@@ -24,4 +30,5 @@ export default function PlayButton({ message, children, onPause, onPlay }) {
       {children} : {status ? "⏸️" : "⏯️"}
     </button>
   );
-}
+});
+export default PlayButton;

@@ -1,12 +1,12 @@
-import { useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 
 function Counter() {
-  console.log("render Counter");
+  // console.log("render Counter");
 
   //   let number = 0;
   // Destructuring useState
   // returns 1 variable and callbackFunction.
-  const [number, setNumber] = useState(0);
+  const [number, setNumber] = useState(5);
   //   console.log(useState);
   //   console.log(setNumber);
 
@@ -25,9 +25,22 @@ function Counter() {
     console.log("clicked", num.current);
   };
 
+  // Prevents from rendering and creating multiple address
+  const fibFunc = useCallback(function fibonnaci(n) {
+    if (n === 1 || n === 2) {
+      return 1;
+    }
+    return fibonnaci(n - 1) + fibonnaci(n - 2);
+  }, []);
+
+  // Prevents from rendering if dependency is not changed
+  const fibMemoized = useMemo(() => fibFunc(number), [number]);
+
   return (
     <>
-      <h1 style={{ color: "white" }}>{number}</h1>
+      <h1 style={{ color: "white" }}>
+        {number} | {fibMemoized}
+      </h1>
       <button onClick={handleClick}>Add</button>
     </>
   );
