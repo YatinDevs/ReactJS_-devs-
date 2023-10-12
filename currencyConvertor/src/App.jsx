@@ -7,7 +7,6 @@ function App() {
   const [from, setFrom] = useState("usd");
   const [to, setTo] = useState("inr");
   const [convertedAmount, setConvertedAmount] = useState(0);
-
   const currencyInfo = useCurrencyInfo(from);
 
   const options = Object.keys(currencyInfo);
@@ -27,10 +26,12 @@ function App() {
     <div
       className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
       style={{
-        backgroundImage: `url('https://images.pexels.com/photos/3532540/pexels-photo-3532540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')`,
+        backgroundImage: `url('https://images.pexels.com/photos/5126268/pexels-photo-5126268.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`,
       }}
     >
       <div className="w-full">
+        <h1 className="text-white text-center text-3xl ">Currency Convertor</h1>
+
         <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
           <form
             onSubmit={(e) => {
@@ -46,7 +47,6 @@ function App() {
                 onAmountChange={(amount) => setAmount(amount)}
                 selectCurrency={from} // Use "from" as the selected currency
                 onCurrencyChange={(newCurrency) => {
-                  setSelectedCurrency(newCurrency);
                   setFrom(newCurrency);
                 }}
               />
@@ -68,7 +68,6 @@ function App() {
                 amountDisable
                 selectCurrency={to}
                 onCurrencyChange={(newCurrency) => {
-                  setSelectedCurrency(newCurrency);
                   setTo(newCurrency);
                 }}
               />
