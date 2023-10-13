@@ -15,16 +15,16 @@ function Github() {
 
   return (
     <div className="container  mx-auto w-full max-w-4xl">
-      <div className="image">
+      <div className="image ">
         <img src={data.avatar_url} alt="Git picture" width={300} />
       </div>
-      <h1 id="fullname">Name : {data.name}</h1>
-      <h4 id="bio">{data.bio}</h4>
-      <p className="">Github Followers: {data.followers}</p>
-      <div id="loc">
-        {" "}
-        <span className="material-icons">location_on</span>
-        <span id="location"> {data.location} </span>
+      <div className="data">
+        <h1 id="fullname">Name : {data.name}</h1>
+        <h4 id="bio">Bio : {data.bio}</h4>
+        <p className="">Github Followers: {data.followers}</p>
+        <div id="loc">
+          <span id="location"> Location : {data.location} </span>
+        </div>
       </div>
     </div>
   );
