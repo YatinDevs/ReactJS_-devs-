@@ -1,12 +1,15 @@
-# - What is Prop Drilling?
+# What is Prop Drilling?
 
-Anyone who has worked in React would have faced this and if not then will face it definitely. Prop drilling is basically a situation when the same data is being sent at almost every level due to requirements in the final level.
+- Anyone who has worked in React would have faced this and if not then will face it definitely. Prop drilling is basically a situation when the same data is being sent at almost every level due to requirements in the final level.
 
 - So to Avoid Prop Drilling
 
-# - ContextAPI --> associated with Pure React Only --> Doesnt Exist Outside React.
+# ContextAPI
 
-- There are Also other libraries outside React to Solve this Issue
+- associated with Pure React Only
+- Doesnt Exist Outside React.
+
+- There are Also other libraries outside React to Solve this Issue :
 
 # - State Management Libraries :
 

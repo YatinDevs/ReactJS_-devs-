@@ -1,17 +1,11 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <h1>Context API Crash Course</h1>
-      </div>
-    </>
+    <div className="">
+      <h1 className="text-3xl bg-orange-300 text-white "> Context API - </h1>
+    </div>
   );
 }
 

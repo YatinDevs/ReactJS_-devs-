@@ -18,3 +18,12 @@ Anyone who has worked in React would have faced this and if not then will face i
 # ContextAPI :
 
 - Its Library and not a FrameWork.
+
+- Steps to Use ContextAPI :
+- 1. Create Context
+  - import and Create the ContextAPI.
+  - React.CreateContext();
+- 2. export it .
+
+- Each Created Context gives Provider.
+-
