@@ -23,3 +23,6 @@ const obj2 = {
   [key2]: val2,
 };
 console.log(obj2);
+
+const abc = [key1];
+console.log(abc);
