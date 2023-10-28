@@ -1,4 +1,19 @@
 // Spread Operators in Js..
+/*
+
+- The JavaScript spread operator (...) allows us to quickly copy all or 
+part of an existing array or object into another array or object.
+
+- The spread operator is often used in combination with destructuring.
+
+
+- In JS , Spread Operators are (...) used to :
+- 1. Iterable Through String , Array and Object.
+- 2. Used In Cloning  Array and Object in NewReference.
+- 3. Used to Destructure Array and Objects.
+- 4. Spreading Array items with key value pairs in New Object.
+- 5. Spreading Object key value pairs in New Object.
+*/
 /// -------------------------------------------------------------------------------
 
 // ## ## ## Iteratable
