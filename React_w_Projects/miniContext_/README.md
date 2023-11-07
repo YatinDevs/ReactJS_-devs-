@@ -14,3 +14,7 @@ Currently, two official plugins are available:
 - Creating a Context :
  - 1 - import React
  - 2 - React.createContext() -> Inbuild Method
+ - 3 - Export Context
+
+- Created Context --> Gives Provider.
+   - To use Context we Wrap our Component Inside Provider.
