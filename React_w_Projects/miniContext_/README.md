@@ -18,3 +18,8 @@ Currently, two official plugins are available:
 
 - Created Context --> Gives Provider.
    - To use Context we Wrap our Component Inside Provider.
+
+- Now We Create nested components and to fetch 
+- To fetch inside any Component UserContext or any Context
+- we use useContext hook
+- and Pass created Context in it and access the Props through it.

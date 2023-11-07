@@ -10,7 +10,12 @@ function Profile(){
             please login!
         </div>
     )
-    return <div>Welcome {user.username}</div>
+    return <div>Welcome!!!         <br></br>
+
+        UserName : {user.username}{" "}          <br></br>
+
+        Password : {user.password}
+        </div>
 }
 
 export default Profile;
